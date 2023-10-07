@@ -5,18 +5,22 @@ function onePie(){
     doisP  = document.getElementById('eita').value
     passo  = Number(document.getElementById('carca').value)
     heheBoy  = Number(document.getElementById('kkkk').value)
-    
-    mortalKombat = {
-        fodd: doisP,
-        ferreir: passo,
-        coringand: heheBoy
-    }
 
-    amanhc.push(mortalKombat)
+    if(!(doisP, passo, heheBoy == '')){
+        mortalKombat = {
+            fodd: doisP,
+            ferreir: passo,
+            coringand: heheBoy
+        }
+    
+        amanhc.push(mortalKombat)
+    }
 
     nao = ''
     for(w=0; w<amanhc.length; w++){
-        nao += '<div>'+amanhc[w].fodd+', '+amanhc[w].ferreir+', '+amanhc[w].coringand+'</div>'
+        nao += '<div id="miodiso'+w+'">Comida: '+amanhc[w].fodd+
+        '<br>Número de pessoas: '+amanhc[w].ferreir+'<br>Número da mesa: '+amanhc[w].coringand+
+        '<br><button onclick="odioge('+w+')">Del haha</button></div>'
     }
     
     persas.innerHTML = nao 
@@ -24,4 +28,8 @@ function onePie(){
     document.getElementById('eita').value = ''
     document.getElementById('carca').value = ''
     document.getElementById('kkkk').value = ''
+}
+
+function odioge(w){
+    alert('Bruh, tu quer deletar a mesa '+amanhc[w].coringand)
 }

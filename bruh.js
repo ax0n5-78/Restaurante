@@ -22,7 +22,6 @@ function onePie(){
         '<br>Número de pessoas: '+amanhc[w].ferreir+'<br>Número da mesa: '+amanhc[w].coringand+
         '<br><button onclick="odioge('+w+')">Del haha</button></div>'
     }
-    
     persas.innerHTML = nao 
 
     document.getElementById('eita').value = ''
@@ -31,5 +30,13 @@ function onePie(){
 }
 
 function odioge(w){
-    alert('Bruh, tu quer deletar a mesa '+amanhc[w].coringand)
+    amanhc.splice(w,1)
+
+    nao = ''
+    for(w=0; w<amanhc.length; w++){
+        nao += '<div id="miodiso'+w+'">Comida: '+amanhc[w].fodd+
+        '<br>Número de pessoas: '+amanhc[w].ferreir+'<br>Número da mesa: '+amanhc[w].coringand+
+        '<br><button onclick="odioge('+w+')">Del haha</button></div>'
+    }
+    persas.innerHTML = nao
 }
